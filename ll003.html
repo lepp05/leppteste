@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio gpt 02</title>
+
+    <style>
+        #botao{
+            background-color: aqua;
+            padding: 15px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Calculando Média</h1>
+    <p>Digite seu nome</p><input type="text" name="nome" id="nome"><br>
+    <p>Digite suas notas</p><input type="number" name="nota1" id="nota1">
+    <input type="number" name="nota2" id="nota2">
+    <input id="botao" type="button" value="Calcular" onclick="Calcular()">
+    <div id="res">Resultado:</div>
+
+    <script>
+        
+        function Calcular(){
+            var vnome = document.getElementById('nome').value
+            var nt1 = document.getElementById('nota1')
+            var nt2 = document.getElementById('nota2')
+            var res = document.getElementById('res')
+            var n1 = Number(nt1.value) //aqui estou convertendo para numero oq foi digitado no imput
+            var n2 = Number(nt2.value)
+            var final = (n1 + n2) / 2
+
+            var situacao = final >= 6 ? 'APROVADO' : final < 5 ? 'REPROVADO' : 'RECUPERAÇÃO'
+
+            var clickbotao = document.getElementById('botao')//estilizando botão
+            clickbotao.value ="Enviado"
+            clickbotao.style.background = 'green'
+
+            res.innerText = `${vnome.toUpperCase()} vc ficou com média: ${final}, e sua situação é : ${situacao}`
+        }
+        
+       
+    </script>
+    
+</body>
+</html>

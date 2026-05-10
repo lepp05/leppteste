@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio gpt 01</title>
+</head>
+<body>
+    <p id="resposta"></p>
+    <input id="botao" type="button" value="COMPRAR" onclick="clicar()">
+    <p id="emdolar"></p>
+    <script>
+        var product = prompt('Qual nome do produto ?')
+        var price = Number(prompt('Qual o preço ?'))
+        var situation = price > 500 ? 'CARO' : price > 100 ? 'MEDIANO' : 'BARATO'
+        var dol = price / 5
+
+        document.getElementById('resposta').innerHTML = `Este produto : ${product.toUpperCase()}, que custa ${price.toLocaleString('pt-BR', {style:'currency', currency : "BRL"})} está num valor ${situation.toUpperCase()}<br>`
+
+        var clickbotao = document.getElementById('botao')
+        function clicar(){
+            clickbotao.value = 'COMPRADO !!!'
+            clickbotao.style.background = 'green'
+            clickbotao.style.color = 'white'
+        }
+
+        document.getElementById('emdolar').innerHTML = `Este produto em dólar custa ${dol.toLocaleString('en-US',{style : 'currency', currency:"USD"})}`
+
+    </script>
+</body>
+</html>

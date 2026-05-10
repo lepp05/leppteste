@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>caro / naocaro</title>
+
+    <style>
+        input#botao{
+            background-color: red;
+            color: white;
+            padding: 20px;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    
+    <script>
+        var produto = prompt('Digite seu produto :')
+        var real = Number(prompt('Qual valor :'))
+        var dol = real / 5.00
+        var situacao = real >= 1500 ? 'CARO' : real >= 1000 ? 'MÉDIO' : 'BARATO'
+
+        document.write(`Este produto : ${produto.toUpperCase()}, está no valor de ${real.toLocaleString('pt-BR',{style:'currency',currency:'BRL'})},
+         e em dolar ele está custando ${dol.toLocaleString('en-US',{style:'currency',currency:'USD'})}<br><br>`)
+
+        document.write(`Situação : ${situacao}`)
+
+
+    </script>
+
+    <div>
+        <input id='botao' type= "button" value="Comprar" onclick="entrar()" >
+    </div>
+    <script>
+        var a = document.getElementById('botao')
+        function entrar(){
+            a.value = 'Comprou!!!'
+            a.style.background = 'green'
+        }
+    </script>
+
+</body>
+</html>

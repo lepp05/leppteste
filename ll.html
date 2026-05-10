@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>conversão de moeda</title>
+</head>
+<body>
+    <h1>Testes</h1>
+
+    <script>
+        var remedio = prompt('Qual remédio vc está tomando ?')
+        var custo = Number(prompt('Quanto ele custa ?'))
+
+        var taxaDolar = 5.00
+        var emDolar = custo / taxaDolar
+
+        document.write(`${remedio} está custando ${custo.toLocaleString('pt-BR', {style: 'currency', currency :'BRL'})} <br>`)
+        document.write(` mas em dólares ele custa ${emDolar.toLocaleString('pt-BR', {style: 'currency', currency :'USD'})}`)
+    </script>
+</body>
+</html>
