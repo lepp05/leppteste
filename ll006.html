@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" name="idade" id="idade">
+    <input type="button" value="verificar" onclick="verificar()">
+    <div id="res"></div>
+
+    <script>
+        
+
+        function verificar() {
+            const idade_ = Number(document.getElementById('idade').value)
+            const res = document.getElementById('res')
+            if (idade_ >= 0 && idade_ <= 3){
+                res.innerHTML= 'vc é um bebê'
+            } else if (idade_ >=4 && idade_ < 14){
+                res.innerHTML = 'vc é uma criança'
+            } else if (idade_ >= 14 && idade_ < 18){
+                res.innerHTML = 'vc é um adolescente'
+            } else if (idade_ >= 18 && idade_ < 60){
+                res.innerHTML = 'vc é um adulto'
+            } else if ( idade_ >= 60){
+                res.innerHTML = 'vc ja é um idoso'
+            }
+
+        }
+    </script>
+</body>
+</html>
