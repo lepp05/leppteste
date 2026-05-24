@@ -16,28 +16,44 @@
     <input type="button" value="multiplicar" onclick="calcular('*')">
     <br>
     <div id="res"></div>
+    <div id="pi"></div>
 
     <script>
-        function calcular(operaçao){
+        function calcular(operacao){
             const n1 = Number(document.getElementById('num1').value)
             const n2 = Number(document.getElementById('num2').value)
             const res = document.getElementById('res')
+            const pi = document.getElementById('pi')
 
             let resultado
 
-            if (operaçao =='+'){
+            if (operacao =='+'){
                 resultado = n1 + n2
-                } else if ( operaçao == '-'){
+                } else if ( operacao == '-'){
                     resultado = n1 - n2
-                } else if (operaçao == '/'){
+                } else if (operacao == '/'){
                     resultado = n1 / n2 
-                } else if (operaçao == '*'){
+                } else if (operacao == '*'){
                     resultado = n1*n2
                 }
                 res.innerHTML = `${resultado}`
-                
+
+           /*const ultimoDigito = String(resultado).slice(-1)    
             
-        }
+            if (['0','2','4','6','8'].includes(ultimoDigito)) {
+
+                pi.innerHTML = 'numero par'
+                
+            } else {
+                pi.innerHTML = 'numero impar'
+            } 
+        }*/
+                
+        if (resultado % 2 == 0){
+            pi.innerHTML = 'par'
+        } else {
+            pi.innerHTML = 'impar'
+        }}
     </script>
 </body>
 </html>
