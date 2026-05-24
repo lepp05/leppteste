@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora </title>
+
+</head>
+<body>
+    <input type="number" name="num1" id="num1">
+    <input type="number" name="num2" id="num2">
+    <br>
+    <input type="button" value="somar" onclick="calcular('+')">
+    <input type="button" value="subtrair" onclick="calcular('-')">
+    <input type="button" value="dividir" onclick="calcular('/')">
+    <input type="button" value="multiplicar" onclick="calcular('*')">
+    <br>
+    <div id="res"></div>
+
+    <script>
+        function calcular(operaçao){
+            const n1 = Number(document.getElementById('num1').value)
+            const n2 = Number(document.getElementById('num2').value)
+            const res = document.getElementById('res')
+
+            let resultado
+
+            if (operaçao =='+'){
+                resultado = n1 + n2
+                } else if ( operaçao == '-'){
+                    resultado = n1 - n2
+                } else if (operaçao == '/'){
+                    resultado = n1 / n2 
+                } else if (operaçao == '*'){
+                    resultado = n1*n2
+                }
+                res.innerHTML = `${resultado}`
+                
+            
+        }
+    </script>
+</body>
+</html>
