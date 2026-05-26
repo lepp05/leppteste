@@ -21,15 +21,25 @@
     <input type="button" value="Calcular" onclick="calcular()" id="botao">
     <br><br>
     <div id="res"></div>
+    <br>
+    <div id="res2"></div>
 
     <script>
         function calcular() {
             const cel = Number(document.getElementById('temp').value)
             const res = document.getElementById('res')
+            const res2 = document.getElementById('res2')
             const fah = (cel * 9) / 5 + 32
 
             res.innerHTML = `A conversão para Fahrenheit fica ${fah}\u00B0 F`
             
+            if (cel <= 18){
+                res2.innerHTML = 'Está frio.'
+            } else if (cel > 18 && cel <= 35) {
+                res2.innerHTML = 'Temperatura agradável.'
+            } else if (cel > 35){
+                res2.innerHTML = 'Está muito quente.'
+            }
         }
     </script>
 </body>
