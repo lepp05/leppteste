@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fahrenheit para celcius </title>
+
+    <style>
+        #temp{
+            width: 60px;
+        }
+        #botao{
+            width: 80px;
+            background-color: gray;
+            color: rgb(255, 255, 255);
+        }
+    </style>
+</head>
+<body>
+    <p>Digite a temperatura em <strong>Celsius</strong> <input type="number" name="temp" id="temp"></p>
+    <input type="button" value="Calcular" onclick="calcular()" id="botao">
+    <br><br>
+    <div id="res"></div>
+
+    <script>
+        function calcular() {
+            const cel = Number(document.getElementById('temp').value)
+            const res = document.getElementById('res')
+            const fah = (cel * 9) / 5 + 32
+
+            res.innerHTML = `A conversão para Fahrenheit fica ${fah}\u00B0 F`
+            
+        }
+    </script>
+</body>
+</html>
